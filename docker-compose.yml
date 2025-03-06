@@ -4,7 +4,9 @@ services:
     container_name: bikcraft-teste
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     volumes:
       - .:/usr/share/nginx/html
     restart: always
+    ports:
+      - "8080:80"
