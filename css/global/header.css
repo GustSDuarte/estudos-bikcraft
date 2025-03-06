@@ -52,8 +52,8 @@
   }
   /* Deixa o botão com animação ao passar o mouse, havendo a border-left como 2° opção*/
   .header-menu a:hover {
-    /* background-color: var(--cor-10); */
-    border-left: 3px solid greenyellow;
+    background-color: var(--cor-10);
+    /* border-left: 3px solid greenyellow; */
   }
   .header a::after {
     display: none;
