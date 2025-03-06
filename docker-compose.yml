@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./Estudos-bikcraft/css:/usr/share/nginx/html/css
+      - .:/usr/share/nginx/html/css
     restart: always
     ports:
       - "8080:80"
