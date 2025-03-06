@@ -1,0 +1,12 @@
+services:
+  web-teste:
+    image: bikcraft
+    container_name: bikcraft-teste
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/share/nginx/html
+    restart: always
+    ports:
+      - "8080:80"
