@@ -24,6 +24,7 @@
   position: relative;
   /* border é uma opção para que os botões não pulem ao passar o mouse por cima quando existir a border-left no ".header-menu a:hover" */
   border: 3px solid #000000;
+  /* border: 2px solid #000000; */
 }
 
 .header-menu a:after {
@@ -53,7 +54,7 @@
   /* Deixa o botão com animação ao passar o mouse, havendo a border-left como 2° opção*/
   .header-menu a:hover {
     background-color: var(--cor-10);
-    border-left: 3px solid greenyellow;
+    /* border-left: 2px solid greenyellow; */
   }
   .header a::after {
     display: none;
