@@ -1,0 +1,10 @@
+services:
+  web-teste:
+    image: bikcraft
+    container_name: bikcraft-teste
+    build:
+      context: .
+      dockerfile: dockerfile
+    volumes:
+      - .:/usr/share/nginx/html
+    restart: always
