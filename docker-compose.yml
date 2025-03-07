@@ -10,3 +10,18 @@ services:
     restart: always
     ports:
       - "8080:80"
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    restart: always
+    ports:
+      - "8081:8080"  # Porta para acessar o Jenkins no navegador
+    volumes:
+      - jenkins_data:/var/jenkins_home  # Para persistir os dados do Jenkins entre os reinícios
+    # environment:
+    #   - JAVA_OPTS=-Djenkins.install.runSetupWizard=false  # Desativa o assistente de configuração inicial (opcional)
+
+volumes:
+  jenkins_data:
+    driver: local
