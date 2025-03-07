@@ -11,12 +11,7 @@ services:
     ports:
       - "8080:80"
 
-networks:
-    jenkins:
-      external: false
-
-
-jenkins-ci-server:
+  jenkins-ci-server:
   user: root
   container_name: 'jenkins-ci-server'
   image: jenkins/jenkins:lts
@@ -35,3 +30,7 @@ jenkins-ci-server:
   ports:
     - "8081:8081"
     - "50000:50000"
+
+networks:
+  jenkins:
+    external: false
