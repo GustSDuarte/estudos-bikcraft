@@ -9,14 +9,14 @@ services:
       - .:/usr/share/nginx/html
     restart: always
     ports:
-      - "8080:80"
+      - "8090:80"
 
   jenkins:
     image: jenkins/jenkins:lts
     container_name: jenkins
     restart: always
     ports:
-      - "8081:8080"  # Porta para acessar o Jenkins no navegador
+      - "8091:8080"  # Porta para acessar o Jenkins no navegador
     volumes:
       - jenkins_data:/var/jenkins_home  # Para persistir os dados do Jenkins entre os reinícios
     # environment:
