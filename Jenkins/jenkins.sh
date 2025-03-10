@@ -1,1 +1,0 @@
-echo "Testando a pipeline jenkins"
