@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # volumes:
-    #   - .:/usr/share/nginx/html
+    volumes:
+      - .:/usr/share/nginx/html
     restart: always
     ports:
       - "8091:80"
