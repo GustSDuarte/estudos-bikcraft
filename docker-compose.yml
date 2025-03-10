@@ -19,7 +19,7 @@ services:
       - "8091:8080"  # Porta para acessar o Jenkins no navegador
     volumes:
       - jenkins_data:/var/jenkins_home  # Para persistir os dados do Jenkins entre os reinícios
-      - /var/run/docker.sock:/var/run/docker.sock  # Montando o Docker socket do host para o container Jenkins
+      - /var/run/docker.sock:/var/run/docker.sock # Montando o Docker socket do host para o container Jenkins
     privileged: true
     # environment:
     #   - JAVA_OPTS=-Djenkins.install.runSetupWizard=false  # Desativa o assistente de configuração inicial (opcional)
