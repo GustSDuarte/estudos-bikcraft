@@ -5,8 +5,26 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - .:/usr/share/nginx/html
+    # volumes:
+    #   - .:/usr/share/nginx/html
     restart: always
     ports:
-      - "8080:80"
+      - "8091:80"
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock  # Permite ao Jenkins acessar o Docker do host
+      - /certs/client:/certs/client  # Permite ao Jenkins usar certificados TLS
+    ports:
+      - "8090:8080"  # Porta para o Jenkins
+      - "50000:50000"  # Porta para agentes remotos do Jenkins
+    restart: always
+    privileged: true  # Permite execução de Docker dentro do Jenkins (DinD)
+
+volumes:
+  jenkins_home:
