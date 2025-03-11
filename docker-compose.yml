@@ -1,6 +1,6 @@
 services:
   bikcraft-teste:
-    image: bikcraft-teste
+    image: ${DOCKER_IMAGE}:${BUILD_ID}
     container_name: bikcraft-teste
     build: 
       context: .
@@ -21,3 +21,4 @@ services:
       - ~/jenkins:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
+      - /usr/bin/compose:/usr/bin/compose
