@@ -4,7 +4,9 @@ pipeline {
   stages {
     stage('Teste') {
         steps {
-          echo 'Testando'
+          sh 'apt update'
+          sh 'apt install docker.io'
+          sh 'docker --version'
       }
     }
   }
