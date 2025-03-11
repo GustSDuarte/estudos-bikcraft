@@ -21,4 +21,5 @@ services:
       - ~/jenkins:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
+      - /usr/bin/compose:/usr/bin/compose
       - /usr/bin/docker:/usr/bin/docker
