@@ -1,19 +1,24 @@
 pipeline {
   agent any
 
-
-  stages{
+  stages {
     stage('Clone Repository') {
-          steps {
-              git url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git'
-          }
+      steps {
+          git url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git'
+      }
     }
+
+    stage('Verificar Repositório') {
+      steps {
+      // Verificar se o repositório foi clonado corretamente
+        sh 'git status'
+        }
+      }
     stage('Teste') {
-          steps {
+        steps {
           sh 'docker --version'
       }
     }
   }
 }
-
 
