@@ -4,15 +4,9 @@ pipeline {
   stages {
     stage('Clone Repository') {
       steps {
-          git credentialsId:'teste_github', url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git'
+          git url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git', branch: 'main'
       }
     }
-
-    stage('Verificar Repositório') {
-      steps {
-        sh 'git status'
-        }
-      }
     stage('Teste') {
         steps {
           sh 'docker --version'
