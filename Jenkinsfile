@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Clone Repository') {
       steps {
-          git url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git'
+          git credentialsid:'github_credentials' url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git'
       }
     }
 
