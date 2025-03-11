@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Teste') {
         steps {
-          echo 'Testando'
+          sh 'docker --version'
       }
     }
   }
