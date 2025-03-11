@@ -26,11 +26,9 @@ pipeline {
     stage('Deploy Container') {
       steps{
           script {
-            sh 'bash -c "docker compose stop bikcraft-teste"'
-            sh 'bash -c "export DOCKER_IMAGE=${DOCKER_IMAGE}"'
-            sh 'bash -c "export BUILD_ID=${BUILD_ID}"'
-            sh 'bash -c "docker-compose build --no-cache bikcraft-teste"'
-            sh 'bash -c "docker-compose up -d bikcraft-teste"'
+            sh "docker-compose stop bikcraft-teste"
+            sh "docker-compose build --no-cache bikcraft-teste"
+            sh "docker-compose up -d bikcraft-teste"
           }
       }
     }
