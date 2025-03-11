@@ -5,8 +5,8 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-  restart: always
-  ports:
+    restart: always
+    ports:
     - "8091:80"
 
   jenkins:
