@@ -2,9 +2,11 @@ pipeline {
   agent any
 
   stages{
-    stage(Teste){
+    stage('Build image'){
       steps{
-        sh 'docker --version'
+        script {
+            dockerapp = docker.build ("gustavosduarte/bikcraft-teste:${env.BUILD_ID}", '-f Dockerfile .')
+        }
       }
     }
   }
