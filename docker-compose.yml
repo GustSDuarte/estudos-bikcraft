@@ -1,6 +1,6 @@
 services:
   bikcraft-teste:
-    image: bikcraft-teste
+    image: ${DOCKER_IMAGE}:${BUILD_ID}
     container_name: bikcraft-teste
     build: 
       context: .
