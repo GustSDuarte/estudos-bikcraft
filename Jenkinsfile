@@ -4,14 +4,16 @@ pipeline {
 
   stages{
     stage('Clone Repository') {
-            steps {
-                git url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git'
-            }
-
+          steps {
+              git url: 'https://github.com/GustSDuarte/Estudos-bikcraft.git'
+          }
+    }
     stage('Teste') {
-        steps {
-        sh 'docker --version'
+          steps {
+          sh 'docker --version'
       }
     }
   }
 }
+
+
