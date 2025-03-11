@@ -27,12 +27,10 @@ pipeline {
       steps{
           script {
             'docker compose stop bikcraft-teste'
-            """
-            export DOCKER_IMAGE=${DOCKER_IMAGE}
-            export BUILD_ID=${BUILD_ID}
-            docker-compose build --no-cache bikcraft-teste
-            docker-compose up -d bikcraft-teste
-            """
+            "export DOCKER_IMAGE=${DOCKER_IMAGE}"
+            "export BUILD_ID=${BUILD_ID}"
+            "docker-compose build --no-cache bikcraft-teste"
+            "docker-compose up -d bikcraft-teste"
           }
       }
     }
