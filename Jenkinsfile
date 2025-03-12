@@ -9,7 +9,7 @@ pipeline {
   stages{
     stage('Build Image'){
       when {
-        branch 'gustavo'  // Só executa quando houver um push para a branch 'gustavo'
+        branch 'gustavo' 
       }
       steps{
         script {
@@ -17,9 +17,9 @@ pipeline {
           }
         }
     }
-    stage('Push Image'){
+    stage('Push Image')
       when {
-        branch 'gustavo'  // Só executa quando houver um push para a branch 'gustavo'
+        branch 'gustavo'  
       }
       steps{
         script {
@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Deploy Container') {
       when {
-        branch 'gustavo'  // Só executa quando houver um push para a branch 'gustavo'
+        branch 'gustavo' 
       }
       steps{
         script {
