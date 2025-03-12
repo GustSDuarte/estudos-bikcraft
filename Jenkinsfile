@@ -6,11 +6,10 @@ pipeline {
     BUILD_ID = "${BUILD_ID}"
   }
 
-  when {
-    branch 'main'  // Só executa a etapa se o push for para a branch 'main'
-  }
-
   stages{
+    when {
+      branch 'main'  // Só executa a etapa se o push for para a branch 'main'
+    }
     stage('Build Image'){
       steps{
         script {
