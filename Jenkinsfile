@@ -6,11 +6,12 @@ pipeline {
     BUILD_ID = "${BUILD_ID}"
   }
 
+  when {
+    branch 'main'  // Só executa a etapa se o push for para a branch 'main'
+  }
+
   stages{
     stage('Build Image'){
-      when {
-                branch 'main'  // Só executa a etapa se o push for para a branch 'main'
-            }
       steps{
         script {
             dockerapp = docker.build ("${DOCKER_IMAGE}:${BUILD_ID}", '-f Dockerfile .')
@@ -18,10 +19,7 @@ pipeline {
       }
     }
     stage('Push Image'){
-      when {
-                branch 'main'  // Só executa a etapa se o push for para a branch 'main'
-            }
-      steps{
+        steps{
         script {
           docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
             dockerapp.push("${BUILD_ID}")
@@ -30,10 +28,7 @@ pipeline {
       }
     }
     stage('Deploy Container') {
-      when {
-                branch 'main'  // Só executa a etapa se o push for para a branch 'main'
-            }
-      steps{
+        steps{
           script {
             sh "docker-compose stop bikcraft-teste"
             sh "docker-compose build --no-cache bikcraft-teste"
