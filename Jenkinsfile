@@ -8,6 +8,9 @@ pipeline {
 
   stages{
     stage('Build Image'){
+      when {
+        branch 'gustavo'  // Só executa quando houver um push para a branch 'gustavo'
+      }
       steps{
         script {
             dockerapp = docker.build ("${DOCKER_IMAGE}:${BUILD_ID}", '-f Dockerfile .')
@@ -15,6 +18,9 @@ pipeline {
         }
     }
     stage('Push Image'){
+      when {
+        branch 'gustavo'  // Só executa quando houver um push para a branch 'gustavo'
+      }
       steps{
         script {
           docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
@@ -24,6 +30,9 @@ pipeline {
       }
     }
     stage('Deploy Container') {
+      when {
+        branch 'gustavo'  // Só executa quando houver um push para a branch 'gustavo'
+      }
       steps{
         script {
           sh "docker-compose stop bikcraft-teste"
