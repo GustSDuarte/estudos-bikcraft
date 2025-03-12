@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = 'gustavosduarte/bikcraft-teste'
-    BUILD_ID = "${env.BUILD_ID}"
+    BUILD_ID = "${BUILD_ID}"
   }
 
   stages{
