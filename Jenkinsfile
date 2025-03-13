@@ -7,13 +7,6 @@ pipeline {
   }
 
   stages{
-    stage('Checkout') {
-      steps {
-        script {
-          echo "Current branch: ${env.BRANCH_NAME}"
-        }
-      }
-    }
     stage('Build Image'){
       steps{
         script { 
