@@ -1,13 +1,13 @@
-services:
-  bikcraft-teste:
-    image: ${DOCKER_IMAGE}:${BUILD_ID}
-    container_name: bikcraft-teste
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-    - "8091:80"
+# services:
+#   bikcraft-teste:
+#     image: ${DOCKER_IMAGE}:${BUILD_ID}
+#     container_name: bikcraft-teste
+#     build: 
+#       context: .
+#       dockerfile: Dockerfile
+#     restart: always
+#     ports:
+#     - "8091:80"
 
   jenkins:
     image: jenkins/jenkins:lts-jdk17
