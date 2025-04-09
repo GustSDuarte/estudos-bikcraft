@@ -1,3 +1,3 @@
-FROM nginx:stable-perl
+FROM nginx:lts
 
 COPY . . 
