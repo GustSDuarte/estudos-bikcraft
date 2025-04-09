@@ -1,3 +1,3 @@
-FROM nginx:lts
+FROM nginx:latest
 
 COPY . . 
